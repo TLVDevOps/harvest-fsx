@@ -55,7 +55,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average Latency of top $TopResources volumes.",
           "fieldConfig": {
@@ -112,7 +112,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(topk($TopResources, lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -127,7 +127,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average Latency of top $TopResources volumes.",
           "fieldConfig": {
@@ -184,7 +184,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(topk($TopResources, lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -199,7 +199,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Throughput of top $TopResources volumes.",
           "fieldConfig": {
@@ -248,7 +248,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(topk($TopResources, lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -263,7 +263,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Throughput of top $TopResources volumes.",
           "fieldConfig": {
@@ -312,7 +312,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(topk($TopResources, lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -327,7 +327,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "IOPs of top $TopResources volumes.",
           "fieldConfig": {
@@ -377,7 +377,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(topk($TopResources, lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -392,7 +392,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "IOPs of top $TopResources volumes.",
           "fieldConfig": {
@@ -442,7 +442,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(topk($TopResources, lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}))",
@@ -471,7 +471,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average read latency in microseconds for all operations on the LUN.",
           "fieldConfig": {
@@ -635,7 +635,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -697,7 +697,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Read bytes.",
           "fieldConfig": {
@@ -819,7 +819,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -881,7 +881,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of read operations.",
           "fieldConfig": {
@@ -1003,7 +1003,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -1065,7 +1065,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average write latency in microseconds for all operations on the LUN.",
           "fieldConfig": {
@@ -1222,7 +1222,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \nand \ntopk($TopResources, lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -1284,7 +1284,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Write bytes.",
           "fieldConfig": {
@@ -1406,7 +1406,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \nand \ntopk($TopResources, lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -1468,7 +1468,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of write operations.",
           "fieldConfig": {
@@ -1590,7 +1590,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \nand \ntopk($TopResources, lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} @ end())",
@@ -1652,7 +1652,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "LUN details.",
           "fieldConfig": {
@@ -1905,7 +1905,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -1919,7 +1919,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_new_status{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -1934,7 +1934,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -1949,7 +1949,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -2035,7 +2035,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average read latency in microseconds for all operations on the LUN.",
           "fieldConfig": {
@@ -2122,7 +2122,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2137,7 +2137,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Read bytes.",
           "fieldConfig": {
@@ -2224,7 +2224,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2240,7 +2240,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of read operations.",
           "fieldConfig": {
@@ -2328,7 +2328,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2343,7 +2343,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average write latency in microseconds for all operations on the LUN.",
           "fieldConfig": {
@@ -2430,7 +2430,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2445,7 +2445,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Write bytes.",
           "fieldConfig": {
@@ -2532,7 +2532,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2548,7 +2548,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of write operations.",
           "fieldConfig": {
@@ -2636,7 +2636,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -2690,7 +2690,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -2777,7 +2777,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"network\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"network\",volume!=\"\"}[3h] @ end()))",
@@ -2792,7 +2792,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -2880,7 +2880,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"throttle\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"throttle\",volume!=\"\"}[3h] @ end()))",
@@ -2895,7 +2895,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -2983,7 +2983,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"qos_min\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"qos_min\",volume!=\"\"}[3h] @ end()))",
@@ -2998,7 +2998,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3085,7 +3085,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cluster\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cluster\",volume!=\"\"}[3h] @ end()))",
@@ -3100,7 +3100,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3187,7 +3187,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"backend\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"backend\",volume!=\"\"}[3h] @ end()))",
@@ -3202,7 +3202,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3290,7 +3290,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cp\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cp\",volume!=\"\"}[3h] @ end()))",
@@ -3305,7 +3305,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3392,7 +3392,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"suspend\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"suspend\",volume!=\"\"}[3h] @ end()))",
@@ -3407,7 +3407,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3495,7 +3495,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cloud\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"cloud\",volume!=\"\"}[3h] @ end()))",
@@ -3510,7 +3510,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3597,7 +3597,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"frontend\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"frontend\",volume!=\"\"}[3h] @ end()))",
@@ -3612,7 +3612,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3699,7 +3699,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"nvlog\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"nvlog\",volume!=\"\"}[3h] @ end()))",
@@ -3714,7 +3714,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -3801,7 +3801,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"disk\",volume!=\"\"} \n  and \ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",resource=\"disk\",volume!=\"\"}[3h] @ end()))",
@@ -3830,7 +3830,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "percentage of utilized storage space in a volume relative to its total capacity.",
           "fieldConfig": {
@@ -3920,7 +3920,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"} \n  and \ntopk($TopResources, avg_over_time(volume_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"}[3h] @ end()))",
@@ -3935,7 +3935,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Percentage of snapshot reserve size that has been used.",
           "fieldConfig": {
@@ -4025,7 +4025,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshot_reserve_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"} \n  and \ntopk($TopResources, avg_over_time(volume_snapshot_reserve_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"}[3h] @ end()))",
@@ -4040,7 +4040,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Percentage of the total disk space that is saved by deduplication and file cloning.",
           "fieldConfig": {
@@ -4130,7 +4130,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_dedup_saved_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"} \n  and \ntopk($TopResources, avg_over_time(volume_sis_dedup_saved_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"}[3h] @ end()))",
@@ -4145,7 +4145,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Percentage of the total disk space that is saved by compressing blocks on the referenced file system.",
           "fieldConfig": {
@@ -4235,7 +4235,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_compress_saved_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"} \n  and \ntopk($TopResources, avg_over_time(volume_sis_compress_saved_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\"}[3h] @ end()))",
@@ -4250,7 +4250,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "LUN used percent.",
           "fieldConfig": {
@@ -4340,7 +4340,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \ntopk($TopResources, avg_over_time(lun_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -4356,7 +4356,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "LUN used percent.",
           "fieldConfig": {
@@ -4446,7 +4446,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"} \n  and \nbottomk($TopResources, avg_over_time(lun_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}[3h] @ end()))",
@@ -4476,7 +4476,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panels displays average read/write latency in microseconds for all operations on the LUN.",
           "fieldConfig": {
@@ -4563,7 +4563,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4574,7 +4574,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4590,7 +4590,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays Read/Write bytes data.",
           "fieldConfig": {
@@ -4677,7 +4677,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4688,7 +4688,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4704,7 +4704,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays number of read/write operations.",
           "fieldConfig": {
@@ -4792,7 +4792,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4803,7 +4803,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4819,7 +4819,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays detail of I/O to or from a LUN which is not owned by the storage system handling the I/O and number of operations received by a storage system that does not own the LUN targeted by the operations.",
           "fieldConfig": {
@@ -4919,7 +4919,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_remote_bytes{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4930,7 +4930,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_remote_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -4946,7 +4946,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays detail of number of compare and write requests, number of unmap command requests, number of write same command requests, number of write same commands requests with unmap bit set and total number of xcopy operations on the LUN.",
           "fieldConfig": {
@@ -5033,7 +5033,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_caw_reqs{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -5044,7 +5044,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_unmap_reqs{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -5056,7 +5056,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_writesame_reqs{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -5068,7 +5068,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_writesame_unmap_reqs{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -5080,7 +5080,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_xcopy_reqs{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}",
@@ -5114,7 +5114,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -5201,7 +5201,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_read_data/lun_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}/1024",
@@ -5212,7 +5212,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "lun_write_data/lun_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume|\",lun=~\"$LUN\"}/1024",
@@ -5239,7 +5239,7 @@
       {
         "current": {
           "text": "prometheus",
-          "value": "ee9vj35on6mtcb"
+          "value": "prometheus"
         },
         "hide": 2,
         "includeAll": false,

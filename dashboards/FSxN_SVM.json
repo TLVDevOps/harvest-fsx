@@ -55,7 +55,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process all the operations on the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -116,7 +116,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -131,7 +131,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total throughput.",
           "fieldConfig": {
@@ -184,7 +184,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_read_data+svm_vol_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -199,7 +199,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of operations per second serviced by the volume.",
           "fieldConfig": {
@@ -253,7 +253,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -268,7 +268,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process read request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -329,7 +329,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -344,7 +344,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process write request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -405,7 +405,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -420,7 +420,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes read per second.",
           "fieldConfig": {
@@ -473,7 +473,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -488,7 +488,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes written per second.",
           "fieldConfig": {
@@ -541,7 +541,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -556,7 +556,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of read operations per second from the volume.",
           "fieldConfig": {
@@ -609,7 +609,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -624,7 +624,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of write operations per second to the volume.",
           "fieldConfig": {
@@ -677,7 +677,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -692,7 +692,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process read/write/other request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -779,7 +779,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -790,7 +790,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -802,7 +802,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_vol_other_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -818,7 +818,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes read/written per second.",
           "fieldConfig": {
@@ -905,7 +905,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -916,7 +916,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -932,7 +932,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of read/write/other operations per second from the volume.",
           "fieldConfig": {
@@ -1020,7 +1020,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -1031,7 +1031,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -1043,7 +1043,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_vol_other_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -1073,7 +1073,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays the top $TopResources SVMs based on the space used across their volumes.",
           "fieldConfig": {
@@ -1157,7 +1157,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (datacenter, cluster, svm) (\n    volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", style=~\"flexvol|flexgroup\"}\n)\nand on(datacenter, cluster, svm)\ntopk(\n    $TopResources,\n    sum by (datacenter, cluster, svm) (\n        avg_over_time(volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", style=~\"flexvol|flexgroup\"}[3h])\n    )\n)",
@@ -1173,7 +1173,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays the top $TopResources SVMs based on the logical space used across their volumes.",
           "fieldConfig": {
@@ -1257,7 +1257,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (datacenter, cluster, svm) (volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", style=~\"flexvol|flexgroup\"})\nand on(datacenter, cluster, svm)\ntopk(\n    $TopResources,\n    sum by (datacenter, cluster, svm) (\n        avg_over_time(volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", style=~\"flexvol|flexgroup\"}[3h])\n    )\n)",
@@ -1287,7 +1287,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process read request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1374,7 +1374,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1389,7 +1389,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes read per second.",
           "fieldConfig": {
@@ -1476,7 +1476,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1491,7 +1491,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of read operations per second from the volume.",
           "fieldConfig": {
@@ -1579,7 +1579,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1594,7 +1594,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process write request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1681,7 +1681,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1696,7 +1696,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes written per second.",
           "fieldConfig": {
@@ -1783,7 +1783,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1798,7 +1798,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of write operations per second to the volume.",
           "fieldConfig": {
@@ -1886,7 +1886,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1915,7 +1915,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size that is physically used in the volume, in bytes.",
           "fieldConfig": {
@@ -1999,7 +1999,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_physical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_space_physical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2015,7 +2015,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Sum of (physical-used, shared_refs, compression_saved_in_plane0, vbn_zero, future_blk_cnt), in bytes.",
           "fieldConfig": {
@@ -2099,7 +2099,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_logical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_space_logical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2115,7 +2115,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The total disk space (in bytes) that is saved by deduplication and file cloning.",
           "fieldConfig": {
@@ -2203,7 +2203,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_dedup_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_sis_dedup_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2218,7 +2218,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The total disk space (in bytes) that is saved by compressing blocks on the referenced file system.",
           "fieldConfig": {
@@ -2307,7 +2307,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_compress_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_sis_compress_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2322,7 +2322,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total space saved (in bytes) in the volume due to deduplication, compression, and file cloning.",
           "fieldConfig": {
@@ -2405,7 +2405,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_total_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_sis_total_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2420,7 +2420,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The virtual space used (includes volume reserves) before storage efficiency, in bytes.",
           "fieldConfig": {
@@ -2497,7 +2497,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2513,7 +2513,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Physical size of the volume, in bytes.",
           "fieldConfig": {
@@ -2590,7 +2590,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2606,7 +2606,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Available space for Snapshot copies from snap-reserve, in bytes.",
           "fieldConfig": {
@@ -2687,7 +2687,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshots_size_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_snapshots_size_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2703,7 +2703,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size in the volume that has been set aside as a reserve for Snapshot copy usage, in bytes.",
           "fieldConfig": {
@@ -2784,7 +2784,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshot_reserve_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_snapshot_reserve_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2800,7 +2800,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size available for Snapshot copies within the Snapshot copy reserve, in bytes.",
           "fieldConfig": {
@@ -2881,7 +2881,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshot_reserve_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_snapshot_reserve_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -2897,7 +2897,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The total space used by Snapshot copies in the volume, in bytes.",
           "fieldConfig": {
@@ -2978,7 +2978,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshots_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(volume_snapshots_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -3008,7 +3008,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for CIFS operations.",
           "fieldConfig": {
@@ -3065,7 +3065,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3080,7 +3080,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM cifs total Iops.",
           "fieldConfig": {
@@ -3130,7 +3130,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_op_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3145,7 +3145,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM CIFS IOPs.",
           "fieldConfig": {
@@ -3227,7 +3227,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_cifs_connections{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -3238,7 +3238,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_cifs_open_files{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -3254,7 +3254,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for CIFS read operations.",
           "fieldConfig": {
@@ -3311,7 +3311,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3326,7 +3326,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for CIFS write operations.",
           "fieldConfig": {
@@ -3383,7 +3383,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3398,7 +3398,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of CIFS read operations.",
           "fieldConfig": {
@@ -3447,7 +3447,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3462,7 +3462,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of CIFS write operations.",
           "fieldConfig": {
@@ -3511,7 +3511,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3526,7 +3526,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for CIFS read/write/average operations.",
           "fieldConfig": {
@@ -3607,7 +3607,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3618,7 +3618,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3630,7 +3630,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_cifs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3646,7 +3646,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM CIFS IOPs.",
           "fieldConfig": {
@@ -3728,7 +3728,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3740,7 +3740,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3752,7 +3752,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_cifs_op_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3767,7 +3767,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Array of select CIFS operation counts.",
           "fieldConfig": {
@@ -3849,7 +3849,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_cifs_op_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -3864,7 +3864,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "dispatch_latency: Latency by ONTAP to select a scanner and until the selected scanner pulls the request.\n\nscan_latency: Latency by the scanner after it pulls the request and until it responds, including scan time of the AV software.\n\nNote, the scan latency is per request (file) and not per IOP.",
           "fieldConfig": {
@@ -3943,7 +3943,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vscan_dispatch_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -3954,7 +3954,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vscan_scan_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -3970,7 +3970,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "scan_request_dispatched_rate: Number of virus-scanning requests sent from Data ONTAP to the Vscan servers per second.\n\nscan_noti_received_rate: Number of virus-scanning requests received back by Data ONTAP from the Vscan servers per second.\n\nIf (dispatched > received) then requests are failing or delayed and deeper troubleshooting is recommended.\n\nNote, the rate is per request (file) and not per IOP.",
           "fieldConfig": {
@@ -4049,7 +4049,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vscan_scan_noti_received_rate{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -4060,7 +4060,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vscan_scan_request_dispatched_rate{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -4076,7 +4076,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "connections_active: Number of active connections from ONTAP nodes to virus scan servers.",
           "fieldConfig": {
@@ -4156,7 +4156,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vscan_connections_active{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}",
@@ -4185,7 +4185,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for iSCSI operations.",
           "fieldConfig": {
@@ -4242,7 +4242,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4257,7 +4257,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Iscsi total throughput.",
           "fieldConfig": {
@@ -4306,7 +4306,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_read_data+iscsi_lif_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4321,7 +4321,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Iscsi total Iops.",
           "fieldConfig": {
@@ -4370,7 +4370,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_iscsi_read_ops+iscsi_lif_iscsi_write_ops+iscsi_lif_iscsi_other_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4385,7 +4385,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for read operations.",
           "fieldConfig": {
@@ -4442,7 +4442,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4457,7 +4457,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for write operations.",
           "fieldConfig": {
@@ -4514,7 +4514,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}) / 1000",
@@ -4529,7 +4529,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Amount of data read from the storage system in bytes.",
           "fieldConfig": {
@@ -4578,7 +4578,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4593,7 +4593,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Amount of data written to the storage system in bytes.",
           "fieldConfig": {
@@ -4642,7 +4642,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4657,7 +4657,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "iSCSI read operations per second on this logical interface (LIF).",
           "fieldConfig": {
@@ -4706,7 +4706,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_iscsi_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4721,7 +4721,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "iSCSI write operations per second on this logical interface (LIF).",
           "fieldConfig": {
@@ -4770,7 +4770,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_iscsi_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -4785,7 +4785,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Amount of data read from the storage system in bytes.",
           "fieldConfig": {
@@ -4866,7 +4866,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "iscsi_lif_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(iscsi_lif_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -4881,7 +4881,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Amount of data written to the storage system in bytes.",
           "fieldConfig": {
@@ -4962,7 +4962,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "iscsi_lif_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(iscsi_lif_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -4977,7 +4977,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency for read/write/other operations.",
           "fieldConfig": {
@@ -5058,7 +5058,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -5069,7 +5069,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -5081,7 +5081,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(iscsi_lif_avg_other_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -5097,7 +5097,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Amount of data read from the storage system/written to the storage system in bytes.",
           "fieldConfig": {
@@ -5178,7 +5178,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -5189,7 +5189,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(iscsi_lif_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -5219,7 +5219,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4 requests. This counter keeps track of the average response time of NFSv4 requests.",
           "fieldConfig": {
@@ -5280,7 +5280,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5295,7 +5295,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 data transfers per second.",
           "fieldConfig": {
@@ -5365,7 +5365,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5404,7 +5404,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of NFSv3 procedure requests per second.",
           "fieldConfig": {
@@ -5474,7 +5474,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5513,7 +5513,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of READ operations.",
           "fieldConfig": {
@@ -5574,7 +5574,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5589,7 +5589,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of WRITE operations.",
           "fieldConfig": {
@@ -5650,7 +5650,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5665,7 +5665,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 read data transfers per second.",
           "fieldConfig": {
@@ -5735,7 +5735,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5774,7 +5774,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "data transfers.",
           "fieldConfig": {
@@ -5844,7 +5844,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5883,7 +5883,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv3 read operations per second.",
           "fieldConfig": {
@@ -5953,7 +5953,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -5992,7 +5992,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv3 write operations per second.",
           "fieldConfig": {
@@ -6062,7 +6062,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -6101,7 +6101,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv3 Read/Write procedure requests. The counter keeps track of the average response time of Read/Write requests.",
           "fieldConfig": {
@@ -6184,7 +6184,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6196,7 +6196,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6212,7 +6212,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 read/write/total data transfers per second.",
           "fieldConfig": {
@@ -6295,7 +6295,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6307,7 +6307,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6319,7 +6319,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6335,7 +6335,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv3 read/write/total operations per second.",
           "fieldConfig": {
@@ -6419,7 +6419,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6431,7 +6431,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6443,7 +6443,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"}[3h] @ end()))",
@@ -6458,7 +6458,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -6535,7 +6535,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by(__name__) ({__name__=~\"svm_nfs_.+_avg_latency\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -6560,7 +6560,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -6636,7 +6636,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (__name__) ({__name__=~\"svm_nfs_.+_total\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v3\"})",
@@ -6675,7 +6675,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4 requests. This counter keeps track of the average response time of NFSv4 requests.",
           "fieldConfig": {
@@ -6736,7 +6736,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -6751,7 +6751,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 data transfers per second.",
           "fieldConfig": {
@@ -6821,7 +6821,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -6860,7 +6860,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of NFSv3 procedure requests per second.",
           "fieldConfig": {
@@ -6930,7 +6930,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -6969,7 +6969,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of READ operations.",
           "fieldConfig": {
@@ -7030,7 +7030,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7045,7 +7045,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of WRITE operations.",
           "fieldConfig": {
@@ -7106,7 +7106,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7121,7 +7121,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 read data transfers per second.",
           "fieldConfig": {
@@ -7191,7 +7191,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7230,7 +7230,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "data transfers.",
           "fieldConfig": {
@@ -7300,7 +7300,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7339,7 +7339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of READ operations.",
           "fieldConfig": {
@@ -7409,7 +7409,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7448,7 +7448,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of WRITE procedures.",
           "fieldConfig": {
@@ -7518,7 +7518,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7557,7 +7557,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4 Read/Write procedure requests. The counter keeps track of the average response time of Read/Write requests.",
           "fieldConfig": {
@@ -7638,7 +7638,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7650,7 +7650,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7666,7 +7666,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv4 read/write data transfers per second.",
           "fieldConfig": {
@@ -7747,7 +7747,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7759,7 +7759,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7775,7 +7775,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv4 read/write/total operations per second.",
           "fieldConfig": {
@@ -7852,7 +7852,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7864,7 +7864,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7876,7 +7876,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"}[3h] @ end()))",
@@ -7891,7 +7891,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -7970,7 +7970,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by(__name__) ({__name__=~\"svm_nfs_.+_avg_latency\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -7995,7 +7995,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -8076,7 +8076,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (__name__) ({__name__=~\"svm_nfs_.+_total\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4\"})",
@@ -8115,7 +8115,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4 requests. This counter keeps track of the average response time of NFSv4 requests.",
           "fieldConfig": {
@@ -8176,7 +8176,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8191,7 +8191,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 data transfers per second.",
           "fieldConfig": {
@@ -8261,7 +8261,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8300,7 +8300,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of NFSv3 procedure requests per second.",
           "fieldConfig": {
@@ -8370,7 +8370,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8409,7 +8409,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of READ operations.",
           "fieldConfig": {
@@ -8470,7 +8470,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8485,7 +8485,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of WRITE operations.",
           "fieldConfig": {
@@ -8546,7 +8546,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8561,7 +8561,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv4 read data transfers per second.",
           "fieldConfig": {
@@ -8631,7 +8631,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8670,7 +8670,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "data transfers.",
           "fieldConfig": {
@@ -8740,7 +8740,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8779,7 +8779,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of READ operations.",
           "fieldConfig": {
@@ -8849,7 +8849,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8888,7 +8888,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of WRITE procedures.",
           "fieldConfig": {
@@ -8958,7 +8958,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -8997,7 +8997,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4.1 Read/Write procedure requests. The counter keeps track of the average response time of Read/Write requests.",
           "fieldConfig": {
@@ -9078,7 +9078,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9090,7 +9090,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9106,7 +9106,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv4.1 read/write data transfers per second.",
           "fieldConfig": {
@@ -9187,7 +9187,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9199,7 +9199,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9215,7 +9215,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv4.1 read/write/total operations per second.",
           "fieldConfig": {
@@ -9297,7 +9297,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9309,7 +9309,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9321,7 +9321,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"}[3h] @ end()))",
@@ -9336,7 +9336,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -9416,7 +9416,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by(__name__) ({__name__=~\"svm_nfs_.+_avg_latency\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -9441,7 +9441,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -9522,7 +9522,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (__name__) ({__name__=~\"svm_nfs_.+_total\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.1\"})",
@@ -9561,7 +9561,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4 requests. This counter keeps track of the average response time of NFSv4 requests.",
           "fieldConfig": {
@@ -9622,7 +9622,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -9637,7 +9637,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv3 data transfers per second.",
           "fieldConfig": {
@@ -9707,7 +9707,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -9746,7 +9746,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of NFSv3 procedure requests per second.",
           "fieldConfig": {
@@ -9816,7 +9816,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -9855,7 +9855,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of READ operations.",
           "fieldConfig": {
@@ -9916,7 +9916,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -9931,7 +9931,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of WRITE operations.",
           "fieldConfig": {
@@ -9992,7 +9992,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10007,7 +10007,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv4 read data transfers per second.",
           "fieldConfig": {
@@ -10077,7 +10077,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10116,7 +10116,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "data transfers.",
           "fieldConfig": {
@@ -10186,7 +10186,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10225,7 +10225,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of READ operations.",
           "fieldConfig": {
@@ -10295,7 +10295,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10334,7 +10334,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of WRITE procedures.",
           "fieldConfig": {
@@ -10404,7 +10404,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10443,7 +10443,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency of NFSv4.2 Read/Write procedure requests. The counter keeps track of the average response time of Read/Write requests.",
           "fieldConfig": {
@@ -10524,7 +10524,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10536,7 +10536,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10552,7 +10552,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Rate of NFSv4.2 read/write data transfers per second.",
           "fieldConfig": {
@@ -10633,7 +10633,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10645,7 +10645,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_throughput{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10661,7 +10661,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total observed NFSv4.2 read/write/total operations per second.",
           "fieldConfig": {
@@ -10743,7 +10743,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_read_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10755,7 +10755,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_write_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10767,7 +10767,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}\nand\ntopk($TopResources, avg_over_time(svm_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"}[3h] @ end()))",
@@ -10782,7 +10782,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -10862,7 +10862,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by(__name__) ({__name__=~\"svm_nfs_.+_avg_latency\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -10887,7 +10887,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -10968,7 +10968,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (__name__) ({__name__=~\"svm_nfs_.+_total\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",nfsv=\"v4.2\"})",
@@ -11007,7 +11007,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for requests that were initiated by the workload.",
           "fieldConfig": {
@@ -11067,7 +11067,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(qos_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11082,7 +11082,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Qos total throughput.",
           "fieldConfig": {
@@ -11134,7 +11134,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_read_data+qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11149,7 +11149,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This field is the workload's rate of operations that completed during the measurement interval; measured per second.",
           "fieldConfig": {
@@ -11202,7 +11202,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11217,7 +11217,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for read requests that were initiated by the workload.",
           "fieldConfig": {
@@ -11277,7 +11277,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(qos_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11292,7 +11292,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for write requests that were initiated by the workload.",
           "fieldConfig": {
@@ -11352,7 +11352,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(qos_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11367,7 +11367,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the amount of data read per second from the filer by the workload.",
           "fieldConfig": {
@@ -11419,7 +11419,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11434,7 +11434,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the amount of data written per second to the filer by the workload.",
           "fieldConfig": {
@@ -11486,7 +11486,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11501,7 +11501,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the rate of this workload's read operations that completed during the measurement interval.",
           "fieldConfig": {
@@ -11554,7 +11554,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11569,7 +11569,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the workload's write operations that completed during the measurement interval; measured per second.",
           "fieldConfig": {
@@ -11622,7 +11622,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(qos_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -11637,7 +11637,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for read/write requests that were initiated by the workload.",
           "fieldConfig": {
@@ -11724,7 +11724,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by (svm) (qos_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, avg by (svm) (avg_over_time(qos_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end())))",
@@ -11736,7 +11736,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by (svm) (qos_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, avg by (svm) (avg_over_time(qos_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end())))",
@@ -11752,7 +11752,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the amount of data read/written per second from the filer by the workload.",
           "fieldConfig": {
@@ -11839,7 +11839,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (svm) (qos_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, sum by (svm) (avg_over_time(qos_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",svm!=\"\"}[3h] @ end())))",
@@ -11850,7 +11850,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (svm) (qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, sum by (svm) (avg_over_time(qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",svm!=\"\"}[3h] @ end())))",
@@ -11866,7 +11866,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the rate of this workload's read/write operations that completed during the measurement interval.",
           "fieldConfig": {
@@ -11955,7 +11955,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (svm) (qos_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, sum by (svm) (avg_over_time(qos_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",svm!=\"\"}[3h] @ end())))",
@@ -11966,7 +11966,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (svm) (qos_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})\nand\ntopk($TopResources, sum by (svm) (avg_over_time(qos_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",svm!=\"\"}[3h] @ end())))",
@@ -11982,7 +11982,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the percentage of reads, performed on behalf of the workload, that were sequential.",
           "fieldConfig": {
@@ -12072,7 +12072,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_sequential_reads{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(qos_sequential_reads{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -12087,7 +12087,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the percentage of writes, performed on behalf of the workload, that were sequential.",
           "fieldConfig": {
@@ -12177,7 +12177,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_sequential_writes{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(qos_sequential_writes{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -12206,7 +12206,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12294,7 +12294,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"network\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"network\"}[3h] @ end()))",
@@ -12309,7 +12309,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12397,7 +12397,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"throttle\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"throttle\"}[3h] @ end()))",
@@ -12412,7 +12412,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12500,7 +12500,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"frontend\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"frontend\"}[3h] @ end()))",
@@ -12515,7 +12515,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12603,7 +12603,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"backend\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"backend\"}[3h] @ end()))",
@@ -12618,7 +12618,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12706,7 +12706,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"cluster\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"cluster\"}[3h] @ end()))",
@@ -12721,7 +12721,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12809,7 +12809,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"disk\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"disk\"}[3h] @ end()))",
@@ -12824,7 +12824,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -12912,7 +12912,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"nvlog\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"nvlog\"}[3h] @ end()))",
@@ -12927,7 +12927,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -13015,7 +13015,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"suspend\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"suspend\"}[3h] @ end()))",
@@ -13030,7 +13030,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "average latency for workload on Data ONTAP subsystems.",
           "fieldConfig": {
@@ -13118,7 +13118,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",resource=\"cloud\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume!=\"\",resource=\"cloud\"}[3h] @ end()))",
@@ -13144,7 +13144,7 @@
       {
         "current": {
           "text": "prometheus",
-          "value": "ee9vj35on6mtcb"
+          "value": "prometheus"
         },
         "hide": 2,
         "includeAll": false,

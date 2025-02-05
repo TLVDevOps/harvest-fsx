@@ -55,7 +55,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average Latency of top $TopResources volumes.",
           "fieldConfig": {
@@ -112,7 +112,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg(topk($TopResources, volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}))",
@@ -127,7 +127,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Throughput of top $TopResources volumes.",
           "fieldConfig": {
@@ -179,7 +179,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(\n  topk(\n    $TopResources,\n    volume_read_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\", style!=\"flexgroup_constituent\"}\n    * on(datacenter, cluster, svm, volume) group_left(node)\n    volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\", tags=~\".*$Tag.*\"}\n  )\n)\n+\nsum(\n  topk(\n    $TopResources,\n    volume_write_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\", style!=\"flexgroup_constituent\"}\n    * on(datacenter, cluster, svm, volume) group_left(node)\n    volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\", tags=~\".*$Tag.*\"}\n  )\n)",
@@ -194,7 +194,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "IOPs of top $TopResources volumes.",
           "fieldConfig": {
@@ -244,7 +244,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum(topk($TopResources, volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}))",
@@ -259,7 +259,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process all the operations on the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -346,7 +346,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -361,7 +361,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total throughput.",
           "fieldConfig": {
@@ -448,7 +448,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n    volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} \n    +\n    volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\n)\nand on (datacenter, cluster, svm, volume)\ntopk(\n    $TopResources,\n    (\n        avg_over_time(volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"} \n        + avg_over_time(volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}\n    )\n)",
@@ -463,7 +463,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of operations per second serviced by the volume.",
           "fieldConfig": {
@@ -551,7 +551,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -580,7 +580,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Volume details.",
           "fieldConfig": {
@@ -942,7 +942,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "expr": "volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",tags=~\".*$Tag.*\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}",
               "format": "table",
@@ -955,7 +955,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "expr": "volume_new_status{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
               "format": "table",
@@ -969,7 +969,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "expr": "volume_size_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
               "format": "table",
@@ -983,7 +983,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "expr": "volume_size_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
               "format": "table",
@@ -997,7 +997,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_dedup_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1012,7 +1012,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_compress_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1027,7 +1027,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_sis_dedup_saved+volume_sis_compress_saved{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1042,7 +1042,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_logical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1057,7 +1057,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_physical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1072,7 +1072,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_clone_split_estimate{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"} * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}",
@@ -1178,7 +1178,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process read request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1324,7 +1324,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -1388,7 +1388,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes read per second from the volume.",
           "fieldConfig": {
@@ -1499,7 +1499,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -1563,7 +1563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of reads per second from the volume.",
           "fieldConfig": {
@@ -1675,7 +1675,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -1739,7 +1739,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process write request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1884,7 +1884,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -1948,7 +1948,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes written per second to the volume.",
           "fieldConfig": {
@@ -2059,7 +2059,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2123,7 +2123,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of writes per second to the volume.",
           "fieldConfig": {
@@ -2235,7 +2235,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2313,7 +2313,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process read request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -2400,7 +2400,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2415,7 +2415,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process write request to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -2502,7 +2502,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2517,7 +2517,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process other operations to the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -2604,7 +2604,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_other_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_other_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2619,7 +2619,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of reads per second from the volume.",
           "fieldConfig": {
@@ -2707,7 +2707,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2722,7 +2722,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of writes per second to the volume.",
           "fieldConfig": {
@@ -2810,7 +2810,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2825,7 +2825,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of other operations per second to the volume.",
           "fieldConfig": {
@@ -2913,7 +2913,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_other_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_other_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -2928,7 +2928,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes read per second from the volume.",
           "fieldConfig": {
@@ -3008,7 +3008,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -3024,7 +3024,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Bytes written per second to the volume.",
           "fieldConfig": {
@@ -3104,7 +3104,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -3119,7 +3119,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -3196,7 +3196,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by(__name__) ({__name__=~\"volume_nfs_(.*)_latency\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3222,7 +3222,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "",
           "fieldConfig": {
@@ -3300,7 +3300,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (__name__) ({__name__=~\"volume_nfs_(.*)_ops\",datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"})",
@@ -3339,7 +3339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays the top k volumes with the highest I/O density within the selected time range. I/O density is calculated as the average number of I/O operations (IOPS) per terabyte of logical used space. Volumes with high I/O density are typically more active and may be critical for performance-sensitive applications.",
           "fieldConfig": {
@@ -3427,7 +3427,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n  volume_total_ops{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\n  / on (datacenter, cluster, svm, volume)\n  clamp_min(\n    volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"} / 1099511627776,\n    1\n  )\n)\nand on (datacenter, cluster, svm, volume)\ntopk(\n  $TopResources,\n  (\n    avg_over_time(\n      volume_total_ops{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()\n    ) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}\n    /\n    clamp_min(\n      avg_over_time(\n        volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()\n      ) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"} / 1099511627776,\n      1\n    )\n  )\n  unless\n  on(datacenter, cluster, svm, volume)\n  volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\", root_volume=\"Yes\",style!=\"flexgroup_constituent\"}\n)",
@@ -3442,7 +3442,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This panel displays the bottom k volumes with the lowest I/O density over the selected time range, excluding any volumes with average IOPS below 50. I/O density is calculated as the average IOPS per terabyte of logical used space. These volumes are active but have relatively low I/O activity compared to their used capacity.",
           "fieldConfig": {
@@ -3530,7 +3530,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n  volume_total_ops{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\n  / on (datacenter, cluster, svm, volume)\n  clamp_min(\n    volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"} / 1099511627776,\n    1\n  )\n)\nand on(datacenter, cluster, svm, volume)\nbottomk(\n  $TopResources,\n  (\n    avg_over_time(\n      volume_total_ops{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()\n    ) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"}\n    /\n    clamp_min(\n      avg_over_time(\n        volume_space_logical_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()\n      ) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"} / 1099511627776,\n      1\n    )\n  )\n  and\n  on(datacenter, cluster, svm, volume)\n  (\n    volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\", root_volume!=\"Yes\",style!=\"flexgroup_constituent\"}\n    * on(datacenter, cluster, svm, volume)\n    avg_over_time(\n      volume_total_ops{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()\n    ) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"} > 50\n  )\n)",
@@ -3584,7 +3584,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for read requests that were initiated by the workload.",
           "fieldConfig": {
@@ -3672,7 +3672,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_read_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -3687,7 +3687,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the average response time for write requests that were initiated by the workload.",
           "fieldConfig": {
@@ -3775,7 +3775,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_write_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -3790,7 +3790,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the rate of this workload&apos;s read operations that completed during the measurement interval.",
           "fieldConfig": {
@@ -3879,7 +3879,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_read_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -3894,7 +3894,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the workload&apos;s write operations that completed during the measurement interval; measured per second.",
           "fieldConfig": {
@@ -3983,7 +3983,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_write_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -3998,7 +3998,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the amount of data read per second from the filer by the workload.",
           "fieldConfig": {
@@ -4079,7 +4079,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -4094,7 +4094,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the amount of data written per second to the filer by the workload.",
           "fieldConfig": {
@@ -4175,7 +4175,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -4190,7 +4190,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the percentage of reads, performed on behalf of the workload, that were sequential.",
           "fieldConfig": {
@@ -4273,7 +4273,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_sequential_reads{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_sequential_reads{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -4288,7 +4288,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "This is the percentage of writes, performed on behalf of the workload, that were sequential. This counter is only available on platforms with more than 4GB of NVRAM.",
           "fieldConfig": {
@@ -4371,7 +4371,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_sequential_writes{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_sequential_writes{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",volume!=\"\"}[3h] @ end()))",
@@ -4425,7 +4425,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "`Note:` Typically these latencies only apply to SAN not NAS.\n\nRepresents the wait time of I/O requests by the external networking protocols on the cluster. The wait time is time spent waiting for transfer ready transactions to finish before the cluster can respond to an I/O request. If the network component is in contention, it means high wait time at the protocol layer is impacting the latency of one or more workloads.",
           "fieldConfig": {
@@ -4512,7 +4512,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"network\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"network\",volume!=\"\"}[3h] @ end()))",
@@ -4527,7 +4527,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents the throughput maximum (ceiling) setting of the storage Quality of Service (QoS) policy group assigned to the workload. If the policy group component is in contention, it means all workloads in the policy group are being throttled by the set throughput limit, which is impacting the latency of one or more of those workloads.",
           "fieldConfig": {
@@ -4615,7 +4615,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"throttle\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"throttle\",volume!=\"\"}[3h] @ end()))",
@@ -4630,7 +4630,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents the latency to a workload that is being caused by QoS throughput floor (expected) setting assigned to other workloads. If the QoS floor set on certain workloads use the majority of the bandwidth to guarantee the promised throughput, other workloads will be throttled and see more latency.",
           "fieldConfig": {
@@ -4718,7 +4718,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"qos_min\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"qos_min\",volume!=\"\"}[3h] @ end()))",
@@ -4733,7 +4733,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents delays caused by the cluster switches, cables, and adapters which physically connect clustered nodes. \n\nIf the cluster interconnect component is in contention, it means high wait time for I/O requests at the cluster interconnect is impacting the latency of one or more workloads.",
           "fieldConfig": {
@@ -4820,7 +4820,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cluster\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cluster\",volume!=\"\"}[3h] @ end()))",
@@ -4835,7 +4835,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents the delays in the data/WAFL layer of ONTAP.",
           "fieldConfig": {
@@ -4922,7 +4922,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"backend\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"backend\",volume!=\"\"}[3h] @ end()))",
@@ -4937,7 +4937,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents delays due to buffered write flushes, called consistency points (cp).",
           "fieldConfig": {
@@ -5025,7 +5025,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cp\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cp\",volume!=\"\"}[3h] @ end()))",
@@ -5040,7 +5040,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents delays due to operations suspending on a delay mechanism. Typically this is diagnosed by NetApp Support.",
           "fieldConfig": {
@@ -5127,7 +5127,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"suspend\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"suspend\",volume!=\"\"}[3h] @ end()))",
@@ -5142,7 +5142,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents the software component in the cluster involved with I/O processing between the cluster and the cloud tier on which user data is stored. If the cloud latency component is in contention, it means that a large amount of reads from volumes that are hosted on the cloud tier are impacting the latency of one or more workloads.",
           "fieldConfig": {
@@ -5230,7 +5230,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cloud\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"cloud\",volume!=\"\"}[3h] @ end()))",
@@ -5245,7 +5245,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents the delays in the network layer of ONTAP.",
           "fieldConfig": {
@@ -5332,7 +5332,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"frontend\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"frontend\",volume!=\"\"}[3h] @ end()))",
@@ -5347,7 +5347,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents delays due to mirroring writes to the NVRAM/NVLOG memory and to the HA partner NVRAM/NVLOG memory.",
           "fieldConfig": {
@@ -5434,7 +5434,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"nvlog\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"nvlog\",volume!=\"\"}[3h] @ end()))",
@@ -5449,7 +5449,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Represents slowness due to attached hard drives or solid state drives.",
           "fieldConfig": {
@@ -5536,7 +5536,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"disk\",volume!=\"\"}\nand\ntopk($TopResources, avg_over_time(qos_detail_resource_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",resource=\"disk\",volume!=\"\"}[3h] @ end()))",
@@ -5565,7 +5565,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size that is physically used in the volume, in bytes.",
           "fieldConfig": {
@@ -5649,7 +5649,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_physical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_space_physical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -5665,7 +5665,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Sum of (physical-used, shared_refs, compression_saved_in_plane0, vbn_zero, future_blk_cnt), in bytes.",
           "fieldConfig": {
@@ -5749,7 +5749,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_logical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_space_logical_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -5765,7 +5765,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The virtual space used (includes volume reserves) before storage efficiency, in bytes.",
           "fieldConfig": {
@@ -5842,7 +5842,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -5858,7 +5858,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Physical size of the volume, in bytes.",
           "fieldConfig": {
@@ -5935,7 +5935,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -5951,7 +5951,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Available space for Snapshot copies from snap-reserve, in bytes.",
           "fieldConfig": {
@@ -6032,7 +6032,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshots_size_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_snapshots_size_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -6048,7 +6048,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size in the volume that has been set aside as a reserve for Snapshot copy usage, in bytes.",
           "fieldConfig": {
@@ -6129,7 +6129,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshot_reserve_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_snapshot_reserve_size{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -6145,7 +6145,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Size available for Snapshot copies within the Snapshot copy reserve, in bytes.",
           "fieldConfig": {
@@ -6226,7 +6226,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshot_reserve_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_snapshot_reserve_available{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -6242,7 +6242,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The total space used by Snapshot copies in the volume, in bytes.",
           "fieldConfig": {
@@ -6323,7 +6323,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_snapshots_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_snapshots_size_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -6339,7 +6339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "The size that is physically used in the performance tier of the volume and has a cold temperature. This parameter is only supported if the volume is in an aggregate that is either attached to an object store or could be attached to an object store.",
           "fieldConfig": {
@@ -6420,7 +6420,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_space_performance_tier_inactive_user_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_space_performance_tier_inactive_user_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -6450,7 +6450,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency per GET operation to object storage.",
           "fieldConfig": {
@@ -6533,7 +6533,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "fabricpool_cloud_bin_op_latency_average{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"GET\"}\nand\ntopk($TopResources, avg_over_time(fabricpool_cloud_bin_op_latency_average{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"GET\"}[3h] @ end()))",
@@ -6549,7 +6549,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total GET request count, per volume, in the collection interval to object storage.  Not scaled per second, but a cumulative count (delta) since the previous poll.",
           "fieldConfig": {
@@ -6632,7 +6632,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"GET\"}\nand\ntopk($TopResources, avg_over_time(fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"GET\"}[3h] @ end()))",
@@ -6648,7 +6648,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency per PUT operation to object storage.",
           "fieldConfig": {
@@ -6731,7 +6731,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "fabricpool_cloud_bin_op_latency_average{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"PUT\"}\nand\ntopk($TopResources, avg_over_time(fabricpool_cloud_bin_op_latency_average{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"PUT\"}[3h] @ end()))",
@@ -6747,7 +6747,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total PUT request count, per volume, in the collection interval to object storage.  Not scaled per second, but a cumulative count (delta) since the previous poll.",
           "fieldConfig": {
@@ -6830,7 +6830,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"PUT\"}\nand\ntopk($TopResources, avg_over_time(fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\", metric=\"PUT\"}[3h] @ end()))",
@@ -6846,7 +6846,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average request count, per volume, in the chosen time window, to object storage.  Not scaled per second, but a cumulative count (delta) since the previous poll.",
           "fieldConfig": {
@@ -6919,7 +6919,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (volume) (fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}) \n  and \ntopk($TopResources, sum by (volume) (avg_over_time(fabricpool_cloud_bin_operation{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())))",
@@ -6975,7 +6975,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Footprint of blocks written to the volume in bytes for the performance tier (bin 0).",
           "fieldConfig": {
@@ -7059,7 +7059,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_performance_tier_footprint{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_performance_tier_footprint{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7075,7 +7075,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Footprint of blocks written to the volume in performance tier (bin 0) as a percentage of aggregate size.",
           "fieldConfig": {
@@ -7161,7 +7161,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_performance_tier_footprint_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_performance_tier_footprint_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7177,7 +7177,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Footprint of blocks written to the volume in bytes for capacity tier (bin 1).",
           "fieldConfig": {
@@ -7261,7 +7261,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_capacity_tier_footprint{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_capacity_tier_footprint{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7277,7 +7277,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Footprint of blocks written to the volume in capacity tier (bin 1) as a percentage of aggregate size.",
           "fieldConfig": {
@@ -7363,7 +7363,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_capacity_tier_footprint_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_capacity_tier_footprint_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",  volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7393,7 +7393,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of user-visible files (inodes) used. This field is valid only when the volume is online.",
           "fieldConfig": {
@@ -7480,7 +7480,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_inode_files_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_inode_files_used{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7496,7 +7496,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total user-visible file (inode) count, i.e., current maximum number of user-visible files (inodes) that this volume can currently hold.",
           "fieldConfig": {
@@ -7583,7 +7583,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_inode_files_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_inode_files_total{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7598,7 +7598,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "volume_inode_files_used / volume_inode_total.",
           "fieldConfig": {
@@ -7680,7 +7680,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_inode_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}\nand on (datacenter, cluster, svm, volume)\ntopk($TopResources, avg_over_time(volume_inode_used_percent{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",style!=\"flexgroup_constituent\"}[3h] @ end()) * on (datacenter, cluster, svm, volume) group_left(node) volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\",tags=~\".*$Tag.*\"})",
@@ -7706,7 +7706,7 @@
       {
         "current": {
           "text": "prometheus",
-          "value": "ee9vj35on6mtcb"
+          "value": "prometheus"
         },
         "hide": 2,
         "includeAll": false,

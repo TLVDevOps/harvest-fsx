@@ -55,7 +55,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of CIFS operations per second.",
           "fieldConfig": {
@@ -143,7 +143,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (cluster) (node_cifs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, sum by (cluster) (avg_over_time(node_cifs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -158,7 +158,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of NFS operations per second.",
           "fieldConfig": {
@@ -246,7 +246,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (cluster) (node_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, sum by (cluster) (avg_over_time(node_nfs_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -261,7 +261,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of operations per second serviced by the volume.",
           "fieldConfig": {
@@ -349,7 +349,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "sum by (cluster) (volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, sum by (cluster) (avg_over_time(volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -364,7 +364,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average processor utilization across all processors in the system.",
           "fieldConfig": {
@@ -455,7 +455,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by (cluster) (node_avg_processor_busy{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, avg by (cluster) (avg_over_time(node_avg_processor_busy{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -472,7 +472,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "System CPU resource utilization is a computed percentage that indicates how busy the system is based on a combination of the most heavily utilized domain and idle CPU cycles. This metric determines the amount of available CPU and will vary based on domains reaching their limits OR exhausting all idle CPU cycles, whichever comes first.",
           "fieldConfig": {
@@ -563,7 +563,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by (cluster) (node_cpu_busy{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, avg by (cluster) (avg_over_time(node_cpu_busy{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -580,7 +580,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process all the operations on the volume; not including request processing or network communication time. node_volume_avg_latency is [volume_avg_latency](#volume_avg_latency) aggregated by `node`.",
           "fieldConfig": {
@@ -669,7 +669,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "avg by (cluster) (node_volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})\nand\ntopk($TopResources, avg by (cluster) (avg_over_time(node_volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"}[3h] @ end())))",
@@ -698,7 +698,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM space used percent.",
           "fieldConfig": {
@@ -837,7 +837,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n  100 * sum by (datacenter,cluster, svm) (\n    volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}\n  )\n  / on(datacenter, cluster, svm)\n  sum by (datacenter,cluster, svm) (\n    volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}\n  )\n)\nand on(datacenter,cluster, svm)\ntopk(\n  $TopResources,\n  (\n    100 * sum by (datacenter,cluster, svm) (\n      avg_over_time(volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}[3h] @ end())\n    )\n    / on(datacenter,cluster, svm)\n    sum by (datacenter,cluster, svm) (\n      avg_over_time(volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}[3h] @ end())\n    )\n  )\n  * on(datacenter,cluster, svm) group_left\n  svm_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", root_svm=~\"No|$IncludeRoot\"}\n)",
@@ -878,7 +878,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Volume space used percent.",
           "fieldConfig": {
@@ -1017,7 +1017,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n 100 * volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"} \n / on(datacenter,cluster,svm,aggr,node,volume,style) \n volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}\n)\nand on(datacenter,cluster, svm,aggr,node, volume,style)\ntopk(\n $TopResources,\n (\n (100 * avg_over_time(volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())) \n / on(datacenter,cluster,svm,aggr,node,volume,style) \n avg_over_time(volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())\n )\n * on(datacenter,cluster, svm, aggr,node,volume,style) group_left\n volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\",root_volume=~\"No|$IncludeRoot\"}\n)",
@@ -1058,7 +1058,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Aggregate space used percent.",
           "fieldConfig": {
@@ -1197,7 +1197,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n    100 * aggr_space_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} \n    / on(datacenter,cluster,aggr) \n    aggr_space_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}\n)\nand on(datacenter,cluster, aggr)\ntopk(\n  $TopResources,\n  (\n    (100 * avg_over_time(aggr_space_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}[3h] @ end())) \n    / on(datacenter,cluster,aggr) \n    avg_over_time(aggr_space_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}[3h] @ end())\n  )\n)",
@@ -1247,7 +1247,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM space used percent.",
           "fieldConfig": {
@@ -1338,7 +1338,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n  100 * sum by (datacenter,cluster, svm) (\n    volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}\n  )\n  / on(datacenter, cluster, svm)\n  sum by (datacenter,cluster, svm) (\n    volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}\n  )\n)\nand on(datacenter,cluster, svm)\ntopk(\n  $TopResources,\n  (\n    100 * sum by (datacenter,cluster, svm) (\n      avg_over_time(volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}[3h] @ end())\n    )\n    / on(datacenter,cluster, svm)\n    sum by (datacenter,cluster, svm) (\n      avg_over_time(volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\"}[3h] @ end())\n    )\n  )\n  * on(datacenter,cluster, svm) group_left\n  svm_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", root_svm=~\"No|$IncludeRoot\"}\n)",
@@ -1353,7 +1353,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Volume space used percent.",
           "fieldConfig": {
@@ -1444,7 +1444,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n 100 * volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"} \n / on(datacenter,cluster,svm,aggr,node,volume,style) \n volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}\n)\nand on(datacenter,cluster, svm,aggr,node, volume,style)\ntopk(\n $TopResources,\n (\n (100 * avg_over_time(volume_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())) \n / on(datacenter,cluster,svm,aggr,node,volume,style) \n avg_over_time(volume_size_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())\n )\n * on(datacenter,cluster, svm, aggr,node,volume,style) group_left\n volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", svm=~\"$SVM\", volume=~\"$Volume\",root_volume=~\"No|$IncludeRoot\"}\n)",
@@ -1459,7 +1459,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Aggregate space used percent.",
           "fieldConfig": {
@@ -1550,7 +1550,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n    100 * aggr_space_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} \n    / on(datacenter,cluster,aggr) \n    aggr_space_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}\n)\nand on(datacenter,cluster, aggr)\ntopk(\n  $TopResources,\n  (\n    (100 * avg_over_time(aggr_space_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}[3h] @ end())) \n    / on(datacenter,cluster,aggr) \n    avg_over_time(aggr_space_total{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}[3h] @ end())\n  )\n)",
@@ -1579,7 +1579,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process all the operations on the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1667,7 +1667,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vol_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(svm_vol_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1682,7 +1682,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "SVM total throughput.",
           "fieldConfig": {
@@ -1770,7 +1770,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n    svm_vol_read_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",svm=~\"$SVM\"} \n    +\n    svm_vol_write_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",svm=~\"$SVM\"}\n)\nand on(datacenter,cluster, svm)\ntopk(\n  $TopResources,\n  (\n    avg_over_time(svm_vol_read_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h])\n    + avg_over_time(svm_vol_write_data{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h])\n  )\n  * on(datacenter,cluster, svm) group_left\n  svm_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", root_svm=~\"No|$IncludeRoot\"}\n)",
@@ -1785,7 +1785,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of operations per second serviced by the volume.",
           "fieldConfig": {
@@ -1874,7 +1874,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "svm_vol_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}\nand\ntopk($TopResources, avg_over_time(svm_vol_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\"}[3h] @ end()))",
@@ -1903,7 +1903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Average latency in microseconds for the WAFL filesystem to process all the operations on the volume; not including request processing or network communication time.",
           "fieldConfig": {
@@ -1990,7 +1990,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}\nand on(datacenter,cluster,svm,volume)\ntopk($TopResources, avg_over_time(volume_avg_latency{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end()))",
@@ -2005,7 +2005,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Volume total throughput.",
           "fieldConfig": {
@@ -2092,7 +2092,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "(\n    volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"} \n    +\n    volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}\n)\nand on(datacenter,cluster,svm,volume)\ntopk(\n    $TopResources,\n    (\n        avg_over_time(volume_read_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())\n        + avg_over_time(volume_write_data{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end())\n    )\n)",
@@ -2107,7 +2107,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Number of operations per second serviced by the volume.",
           "fieldConfig": {
@@ -2195,7 +2195,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "ee9vj35on6mtcb"
+                "uid": "prometheus"
               },
               "exemplar": false,
               "expr": "volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}\nand on(datacenter,cluster,svm,volume)\ntopk($TopResources, avg_over_time(volume_total_ops{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",svm=~\"$SVM\",volume=~\"$Volume\"}[3h] @ end()))",
@@ -2221,7 +2221,7 @@
       {
         "current": {
           "text": "prometheus",
-          "value": "ee9vj35on6mtcb"
+          "value": "prometheus"
         },
         "hide": 2,
         "includeAll": false,

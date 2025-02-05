@@ -55,7 +55,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Volumes Protected With Snapshot Copies (local).",
           "fieldConfig": {
@@ -169,7 +169,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "ee9vj35on6mtcb"
+            "uid": "prometheus"
           },
           "description": "Total number of volumes that are protected.",
           "fieldConfig": {
