@@ -21,10 +21,11 @@
       }
     ]
   },
-  "editable": false,
+  "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 9,
+  "id": 6,
+  "iteration": 1742997171288,
   "links": [
     {
       "asDropdown": true,
@@ -41,6 +42,7 @@
       "url": ""
     }
   ],
+  "liveNow": false,
   "panels": [
     {
       "collapsed": true,
@@ -140,10 +142,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{})) OR on() vector(0)",
+              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{})) OR on() vector(0)",
               "instant": true,
               "interval": "",
               "legendFormat": "Volumes protected",
@@ -152,10 +154,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy=~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}))) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy=~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}))) OR on() vector(0)",
               "hide": false,
               "instant": true,
               "interval": "",
@@ -183,8 +185,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "semi-dark-green",
-                    "value": null
+                    "color": "semi-dark-green"
                   }
                 ]
               },
@@ -222,10 +223,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{})) OR on() vector(0)",
+              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{})) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -241,7 +242,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Volumes Breaching Snapshot Copy Reserve Space.",
           "fieldConfig": {
@@ -326,10 +327,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)",
+              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)",
               "instant": true,
               "interval": "",
               "legendFormat": "Volumes breached",
@@ -338,10 +339,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "(count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{})) * on (volume, svm, cluster) group_right() (volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} <= volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)) + (count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} == 0)) OR on() vector(0))",
+              "expr": "(count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{})) * on (volume, svm, cluster) group_right() (volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} <= volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)) + (count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} == 0)) OR on() vector(0))",
               "instant": true,
               "interval": "",
               "legendFormat": "Volumes not breached",
@@ -354,7 +355,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot size used is breached the snapshot reserve size.",
           "fieldConfig": {
@@ -368,8 +369,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "light-red",
-                    "value": null
+                    "color": "light-red"
                   }
                 ]
               },
@@ -407,10 +407,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)",
+              "expr": "count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -426,7 +426,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes that are not protected.",
           "fieldConfig": {
@@ -451,8 +451,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-yellow",
-                    "value": null
+                    "color": "dark-yellow"
                   }
                 ]
               },
@@ -490,10 +489,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy=~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}))) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy=~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}))) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -509,7 +508,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot size used is not breached the snapshot reserve size.",
           "fieldConfig": {
@@ -534,8 +533,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "semi-dark-green",
-                    "value": null
+                    "color": "semi-dark-green"
                   }
                 ]
               },
@@ -573,10 +571,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "(count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{})) * on (volume, svm, cluster) group_right() (volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} <= volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)) + (count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} == 0)) OR on() vector(0))",
+              "expr": "(count((volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{})) * on (volume, svm, cluster) group_right() (volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} > 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} <= volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"})) OR on() vector(0)) + (count(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} == 0)) OR on() vector(0))",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -592,7 +590,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "This panel displays volumes detail with protected status and snapshot policy.",
           "fieldConfig": {
@@ -614,8 +612,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -732,10 +729,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "label_replace(label_replace(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", volume!~\"MDV.*\"}, \"Status\", \"Protected\", \"snapshot_policy\", \"(.*)\") , \"Status\", \"Unprotected\", \"snapshot_policy\", \"(none.*)\") * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{})",
+              "expr": "label_replace(label_replace(volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", volume!~\"MDV.*\"}, \"Status\", \"Protected\", \"snapshot_policy\", \"(.*)\") , \"Status\", \"Unprotected\", \"snapshot_policy\", \"(none.*)\") * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{})",
               "format": "table",
               "instant": true,
               "interval": "",
@@ -775,7 +772,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Volumes details of snapshot copy reserve space.",
           "fieldConfig": {
@@ -793,8 +790,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "rgb(31, 176, 196)",
-                    "value": null
+                    "color": "rgb(31, 176, 196)"
                   }
                 ]
               },
@@ -965,10 +961,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0)",
+              "expr": "volume_labels{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\", snapshot_policy!=\"\", snapshot_policy!~\"none.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{}) * on (volume, svm, cluster) group_right() ( volume_snapshot_reserve_size{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0 and volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"} >= 0)",
               "format": "table",
               "hide": false,
               "instant": true,
@@ -980,7 +976,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
               "expr": "volume_snapshots_size_used{datacenter=~\"$Datacenter\", cluster=~\"$Cluster\"}",
@@ -1083,7 +1079,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot count is < 10.",
           "fieldConfig": {
@@ -1097,8 +1093,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "rgb(31, 176, 196)",
-                    "value": null
+                    "color": "rgb(31, 176, 196)"
                   }
                 ]
               },
@@ -1136,10 +1131,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 0 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} < 10)) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 0 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} < 10)) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -1155,7 +1150,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot count is between 10 to 100.",
           "fieldConfig": {
@@ -1169,8 +1164,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "rgb(31, 176, 196)",
-                    "value": null
+                    "color": "rgb(31, 176, 196)"
                   }
                 ]
               },
@@ -1208,10 +1202,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} >= 10 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} <= 100)) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} >= 10 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} <= 100)) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -1227,7 +1221,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot count is between 101 to 500.",
           "fieldConfig": {
@@ -1241,8 +1235,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "rgb(31, 176, 196)",
-                    "value": null
+                    "color": "rgb(31, 176, 196)"
                   }
                 ]
               },
@@ -1280,10 +1273,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 100 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} <= 500)) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 100 and volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} <= 500)) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -1299,7 +1292,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "Total number of volumes whose snapshot count is > 500.",
           "fieldConfig": {
@@ -1313,8 +1306,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "rgb(31, 176, 196)",
-                    "value": null
+                    "color": "rgb(31, 176, 196)"
                   }
                 ]
               },
@@ -1352,10 +1344,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 500)) OR on() vector(0)",
+              "expr": "count((volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 500)) OR on() vector(0)",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -1371,7 +1363,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus"
+            "uid": "ee9vj35on6mtcb"
           },
           "description": "This panel displays volumes detail with snapshot count.",
           "fieldConfig": {
@@ -1393,8 +1385,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               }
@@ -1586,10 +1577,10 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "prometheus"
+                "uid": "ee9vj35on6mtcb"
               },
               "exemplar": false,
-              "expr": "(volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 0)",
+              "expr": "(volume_labels{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\",snapshot_policy!=\"\", snapshot_policy!~\"none.*\", volume!~\"MDV.*\"}  * on (snapshot_policy) group_left () group by (snapshot_policy) (snapshot_policy_total_schedules{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"})) * on (volume,svm,cluster) (volume_snapshot_count{datacenter=~\"$Datacenter\",cluster=~\"$Cluster\"} > 0)",
               "format": "table",
               "instant": true,
               "interval": "",
@@ -1649,38 +1640,42 @@
       "type": "row"
     }
   ],
-  "preload": false,
   "refresh": "",
-  "schemaVersion": 40,
+  "schemaVersion": 34,
+  "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
+          "selected": false,
           "text": "prometheus",
           "value": "prometheus"
         },
         "hide": 2,
         "includeAll": false,
         "label": "Data Source",
+        "multi": false,
         "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",
         "refresh": 1,
         "regex": "",
+        "skipUrlSync": false,
         "type": "datasource"
       },
       {
         "current": {
-          "text": [
-            "DC-01"
-          ],
-          "value": [
-            "DC-01"
-          ]
+          "selected": false,
+          "text": "fsx",
+          "value": "fsx"
         },
-        "datasource": "prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
         "definition": "label_values(cluster_new_status{system_type!=\"7mode\"},datacenter)",
+        "hide": 0,
         "includeAll": false,
         "multi": true,
         "name": "Datacenter",
@@ -1691,12 +1686,14 @@
         },
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "type": "query"
       },
       {
         "allValue": ".*",
         "current": {
+          "selected": true,
           "text": [
             "All"
           ],
@@ -1704,8 +1701,12 @@
             "$__all"
           ]
         },
-        "datasource": "prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
         "definition": "label_values(cluster_new_status{system_type!=\"7mode\",datacenter=~\"$Datacenter\"},cluster)",
+        "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "Cluster",
@@ -1716,6 +1717,7 @@
         },
         "refresh": 2,
         "regex": "",
+        "skipUrlSync": false,
         "sort": 1,
         "type": "query"
       }
@@ -1741,6 +1743,6 @@
   "timezone": "",
   "title": "FSxN: Data Protection",
   "uid": "cdot-data-protection-snapshots",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
